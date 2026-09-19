@@ -14,6 +14,8 @@ body{background:linear-gradient(135deg,#e2edff,#f4f7fc 55%,#eaf1fc);-webkit-font
 .home-view .date-tabs{background:#ffffff40}.home-view .date-tabs button{color:#102340}.home-view .date-tabs .selected{background:#fff;color:#1956bd;box-shadow:0 3px 8px #17477920}
 header{height:60px;background:#ffffffed;border-bottom:1px solid #e9eff8;backdrop-filter:blur(12px)}
 header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;background:#edf3ff;color:#4b7dcb;border-radius:6px;padding:4px 7px;font-size:10px;font-weight:600;letter-spacing:1px}
+.home-view header{background:#367cfa url("assets/dashboard-background.png") center top/100% auto no-repeat;border-bottom:0;backdrop-filter:none;color:#102340}
+.home-view header .demo{background:#ffffff40;color:#102340}
 .hero.date-only{background:transparent;padding:16px 16px 10px}.date-filter{color:#56647a;gap:10px}.date-type>span,.date-range-row>span{color:#748196;width:66px;font-size:13px}
 .date-tabs{background:#e5edfa;border:0;border-radius:10px;padding:4px;gap:4px}.date-tabs button{height:36px;color:#7b8799;background:transparent;border:0;border-radius:7px}.date-tabs .selected{color:#fff;background:#3377ff;box-shadow:0 3px 8px #3377ff30}.date-tabs button:focus-visible{outline-color:#194db8}
 .date-range-row>button{background:#fff;border:1px solid #e4ebf6;color:#374761;border-radius:10px;font-size:13px;padding:12px}.date-separator{color:#a9b6c9}
