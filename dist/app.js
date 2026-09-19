@@ -21,7 +21,7 @@ add('stores','在营门店',399,'家',{momValue:391,yoyValue:368,formula:'期末
 for(const [id,name,n] of owners)add(id,name+'门店',n,'家',{momValue:{direct:205,regulated:84,managed:64,cofound:38}[id],yoyValue:{direct:195,regulated:80,managed:60,cofound:33}[id],parent:'stores',formula:name+'模式下的在营门店数。',drivers:['新增门店','模式转入','退出及转出']});
 add('building','在建门店',15,'家',{momValue:18,yoyValue:12,formula:'已立项、尚未开业的门店数。',drivers:['新立项','已开业转出','暂停项目']});
 add('area','坪效',()=>2250*days()/monthDays(),'元/㎡',{kind:'flow',decimals:1,formula:'月坪效基准 2,250 元/㎡；日、周按所选月天数折算，跨月周以选定日期所在月为基准。演示折算，不代表实测逐日坪效。',drivers:['实收变化','营业面积变化']});
-add('fulltime','全职工',25900,'人',{momValue:25380,yoyValue:23800,formula:'期末在岗全职员工人数，不含小时工。',drivers:['新入职','离职','调入调出净额']});
+add('fulltime','正式工',25900,'人',{momValue:25380,yoyValue:23800,formula:'期末在岗正式工人数，不含小时工。',drivers:['新入职','离职','调入调出净额']});
 add('hourly','小时工',()=>90000*days()/monthDays(),'人天',{kind:'flow',mom:.036,yoy:.12,formula:'小时工实际出勤折算人天；月基准90,000人天，日周按月天数折算。',drivers:['在岗小时工数量','人均出勤天数']});
 add('efficiency','人效',170.9,'元/工时',{decimals:1,formula:'所选周期实收 ÷ 有效总工时。人员存量与有效工时为不同统计口径。',drivers:['实收变化','有效工时变化']});
 add('members','累计会员',9920000,'人',{mom:.018,yoy:.18,formula:'截至期末累计去重会员数。',drivers:['新增注册','注销及去重']});
