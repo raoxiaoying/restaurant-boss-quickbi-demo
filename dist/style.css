@@ -27,3 +27,5 @@ header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;back
 @media(min-width:600px){body{padding:24px 0}#app{border-radius:24px;border:1px solid #dfe8f6}}
 @media(max-width:390px){.card,.overview-block{margin-left:12px;margin-right:12px}.health-grid,.quadrant-grid{margin-left:12px;margin-right:12px;gap:10px}.health-card{padding:14px 12px}.health-title{gap:3px}.health-title b{font-size:14px}.health-title>span{font-size:10px}.health-title i{width:23px;height:23px;line-height:23px}.group-metric{padding:14px 12px}.metric-number{font-size:26px}.metric-changes{font-size:11px;gap:3px 7px}.pnl-meta{flex-wrap:wrap}.section-title{font-size:15px}}
 @media(prefers-reduced-motion:no-preference){button{transition:background .18s,box-shadow .18s}button:hover{filter:brightness(.985)}.health-card:hover,.quadrant:hover{box-shadow:0 5px 20px #3377ff12}}
+
+.strip-reading{text-align:right}.strip-reading .metric-changes{justify-content:flex-end;margin-top:8px}
