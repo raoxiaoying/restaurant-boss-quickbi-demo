@@ -8,7 +8,10 @@
 /* Reference-aligned mobile dashboard surfaces. */
 :root{--blue:#3377ff;--red:#f33e49;--green:#11ad58;color:#202631;background:#eaf1fc}
 body{background:linear-gradient(135deg,#e2edff,#f4f7fc 55%,#eaf1fc);-webkit-font-smoothing:antialiased}
-#app{max-width:480px;background:linear-gradient(180deg,#eef5ff,#f5f7fa 1000px);box-shadow:0 16px 64px #284d8812}
+#app{max-width:480px;background:#edf6fe url("assets/content-background.png") center top/100% auto repeat-y;box-shadow:0 16px 64px #284d8812}
+#app.home-view{background-image:url("assets/dashboard-background.png"),url("assets/content-background.png");background-repeat:no-repeat,repeat-y;background-size:100% auto;background-position:center top}
+.home-view .date-type>span,.home-view .date-range-row>span,.home-view .stamp,.home-view .stamp .link-btn{color:#102340}
+.home-view .date-tabs{background:#ffffff40}.home-view .date-tabs button{color:#102340}.home-view .date-tabs .selected{background:#fff;color:#1956bd;box-shadow:0 3px 8px #17477920}
 header{height:60px;background:#ffffffed;border-bottom:1px solid #e9eff8;backdrop-filter:blur(12px)}
 header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;background:#edf3ff;color:#4b7dcb;border-radius:6px;padding:4px 7px;font-size:10px;font-weight:600;letter-spacing:1px}
 .hero.date-only{background:transparent;padding:16px 16px 10px}.date-filter{color:#56647a;gap:10px}.date-type>span,.date-range-row>span{color:#748196;width:66px;font-size:13px}
