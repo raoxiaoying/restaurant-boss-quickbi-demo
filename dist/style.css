@@ -65,3 +65,6 @@ html.wx header{display:none}
 
 /* 达成率趋势与支付类型分布之间的分割线与间距 */
 .receipt-divider{height:1px;background:#e4ecf6;margin:22px 0 18px}
+/* 实收分布：环比/同比百分点列 */
+.pp0{color:#8796ac;font-size:11px}
+.payment-table td b{font-weight:600}
