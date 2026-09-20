@@ -62,3 +62,6 @@ html.wx header{display:none}
 .payment-table tfoot td{font-weight:600;border-top:2px solid #e4ecf6;color:#30435c;padding-top:10px}
 .payment-table tfoot td:nth-child(2){font-weight:700}
 .payment-table tfoot td:nth-child(3){font-weight:400}
+
+/* 达成率趋势与支付类型分布之间的分割线与间距 */
+.receipt-divider{height:1px;background:#e4ecf6;margin:22px 0 18px}
