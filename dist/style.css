@@ -71,3 +71,4 @@ html.wx header{display:none}
 /* 实收达成率卡内渠道拆分表 */
 .channel-split{margin:16px 0 2px;min-width:0}
 .channel-split td b{font-weight:600}
+.store-list{min-width:560px}.store-list td b{font-weight:600}.store-list .cell-sub{display:block;font-style:normal;font-size:11px;color:#8a98ac;margin-top:3px}.store-list .cell-sub b{font-weight:600}.store-list th:nth-child(3),.store-list th:nth-child(4){white-space:nowrap}
