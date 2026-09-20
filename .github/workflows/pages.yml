@@ -22,9 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: 注入缓存版本号
+        run: |
+          VERSION="${GITHUB_SHA::7}"
+          sed -i "s/__VERSION__/${VERSION}/g" dist/index.html
+          echo "缓存版本号已注入: ${VERSION}"
+          grep -o 'app.js?v=[a-z0-9]*' dist/index.html || echo "警告：未找到版本号占位符"
       - uses: actions/configure-pages@v5
         with:
-          # 首次部署自动开通 Pages，免去手动点选
+          # 首次部署时自动开通 Pages（免去手动去 Settings 点选）
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
