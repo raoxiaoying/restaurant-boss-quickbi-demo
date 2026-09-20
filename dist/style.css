@@ -26,7 +26,7 @@ header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;back
 
 .dashboard-hero{padding:24px 20px 12px;color:#fff}.group-identity{display:flex;align-items:center;gap:12px;min-width:0}.group-mark{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:50%;background:#ffffff20}.group-mark svg{width:22px;height:22px}.group-name{min-width:0}.group-name h1{margin:0;font-size:22px;font-weight:650;line-height:1.3;white-space:nowrap}.group-name p{margin:4px 0 0;color:#ffffffcf;font-size:13px;line-height:1.5}
 .group-badges{display:flex;align-items:center;gap:6px;margin:12px 0 0 48px}.group-badges span,.group-badges button{display:inline-flex;align-items:center;min-height:24px;padding:2px 8px;border:0;border-radius:6px;background:#ffffff14;color:#ffffffeb;font:inherit;font-size:12px;line-height:1.5;white-space:nowrap}
-.hero-periods{display:flex;justify-content:flex-end;margin-top:16px}.dashboard-hero+.section-title{margin-top:6px}
+.hero-periods{display:flex;justify-content:flex-end;margin-top:16px}.dashboard-hero+.section-title{margin-top:6px;color:#fff}
 @media(max-width:359px){.dashboard-hero{padding:20px 16px 10px}.group-badges{gap:4px}.group-badges span,.group-badges button{padding:2px 7px}.dashboard-hero .date-trigger{padding:10px 12px;font-size:13px}}
 
 #date-dialog{border-radius:20px;padding:24px;color:#202631}#date-dialog h3{font-size:18px;margin:0 0 20px}.date-range-fields{display:grid;gap:9px}.date-range-fields label{font-size:13px;color:#65738a}.date-range-fields input{margin-bottom:7px;border-color:#dce5f2;border-radius:8px;min-height:46px}.date-range-help{margin:10px 0 20px}#date-error{color:var(--red);font-size:12px;margin:0 0 16px}.date-actions button{min-height:42px;border-radius:8px;padding:9px 24px}
