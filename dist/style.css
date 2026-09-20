@@ -68,3 +68,6 @@ html.wx header{display:none}
 /* 实收分布：环比/同比百分点列 */
 .pp0{color:#8796ac;font-size:11px}
 .payment-table td b{font-weight:600}
+/* 实收达成率卡内渠道拆分表 */
+.channel-split{margin:16px 0 2px;min-width:0}
+.channel-split td b{font-weight:600}
