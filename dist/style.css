@@ -54,3 +54,11 @@ html.wx header{display:none}
 /* iOS 兜底：健康卡显式深色，不依赖继承；footer 构建号用于缓存排查 */
 .health-card{color:#262626}
 .build-tag{font-size:10px;color:#b6bdc9;letter-spacing:.5px}
+
+/* 支付类型分布列表：3 列（支付类型/金额/占比），覆盖 market-table 的 3 列与 5 列共适用规则 */
+.payment-table{min-width:0}
+.payment-table td:nth-child(3){font-weight:400}
+.payment-table td:nth-child(2){font-weight:550}
+.payment-table tfoot td{font-weight:600;border-top:2px solid #e4ecf6;color:#30435c;padding-top:10px}
+.payment-table tfoot td:nth-child(2){font-weight:700}
+.payment-table tfoot td:nth-child(3){font-weight:400}
