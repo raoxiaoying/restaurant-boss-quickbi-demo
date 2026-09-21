@@ -8,7 +8,7 @@
 :root{--blue:#3377ff;--red:#f33e49;--green:#11ad58;color:#202631;background:#eaf1fc}
 body{background:linear-gradient(135deg,#e2edff,#f4f7fc 55%,#eaf1fc);-webkit-font-smoothing:antialiased}
 #app{max-width:480px;background:#edf6fe url("assets/content-background.png") center top/100% auto repeat-y;box-shadow:0 16px 64px #284d8812}
-#app.home-view{background-image:linear-gradient(180deg,#4090fd 0%,#3f8afc 20%,#428bfb 26%,#6ba6fb 30%,#a9cefc 35%,#cce3fd 38%,#eef6fe 42%,#eef6fe 100%),url("assets/content-background.png");background-repeat:no-repeat,repeat-y;background-size:100% 920px,100% auto;background-position:center top}
+#app.home-view{background:#eef6fe url("assets/content-background.png") center top/100% auto repeat-y}
 header{height:60px;background:#ffffffed;border-bottom:1px solid #e9eff8;backdrop-filter:blur(12px)}
 header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;background:#edf3ff;color:#4b7dcb;border-radius:6px;padding:4px 7px;font-size:12px;font-weight:600;letter-spacing:1px}
 .section-title{background:none;padding:12px 18px;margin:15px 0 2px;font-size:16px;color:#192334}.section-title span:before{width:4px;height:17px;border-radius:3px;background:#3377ff;margin-right:10px;vertical-align:-3px}.section-title small{font-size:12px;color:#8a98ac}
@@ -50,7 +50,7 @@ header h1{font-size:18px;font-weight:650;letter-spacing:.4px}.demo{border:0;back
 .market-table .cell-arrow{font-style:normal;font-weight:600;color:#9db4d8;margin-left:6px}
 .market-table tbody tr[data-go]:hover .cell-arrow{color:#2d62d7}
 /* 微信内置浏览器：顶栏与微信原生导航重复，隐藏页面内 header（返回用微信自带按钮） */
-html.wx header{display:none}
+html.wx header:not(.mh){display:none}
 /* iOS 兜底：健康卡显式深色，不依赖继承；footer 构建号用于缓存排查 */
 .health-card{color:#262626}
 .build-tag{font-size:12px;color:#b6bdc9;letter-spacing:.5px}
@@ -97,3 +97,55 @@ html.wx header{display:none}
 @keyframes pageIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .chart-tip{transform-box:fill-box;transform-origin:center bottom;animation:tipIn .12s ease-out}
 @keyframes tipIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+/* ===================== 方案A · 首页沉浸胶囊 hero（设计基准：boss-top-redesign-mockup 方案A） ===================== */
+:root{--blue-deep:#0f6fe0;--green-on-dark:#9df0d1;--red-on-dark:#ffb9c0}
+.a-hero{position:relative;z-index:0;padding:calc(20px + env(safe-area-inset-top,0px)) 18px 34px;color:#fff;background:radial-gradient(ellipse at 88% 10%,rgba(140,215,255,.38),transparent 50%),radial-gradient(ellipse at 8% 46%,rgba(20,90,230,.36),transparent 55%),linear-gradient(180deg,#0754d8 0%,#167ced 38%,#36b6f7 74%,#eef6fe 100%)}
+.a-hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='200'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M-20 40 Q40 10 90 45 T200 40 T320 70'/%3E%3Cpath d='M-20 80 Q60 50 120 85 T240 80 T340 110'/%3E%3Cpath d='M-20 120 Q50 95 110 125 T230 120 T330 150'/%3E%3Cpath d='M-20 160 Q70 135 130 165 T250 160 T350 190'/%3E%3C/g%3E%3C/svg%3E");background-size:280px 200px;opacity:.08}
+.a-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-right:88px}
+.a-brand b{display:block;font-size:16px;font-weight:650;letter-spacing:.4px}
+.a-brand span{display:block;font-size:12px;color:rgba(255,255,255,.82);margin-top:2px}
+.a-score{margin-top:18px}
+.a-score label{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;color:rgba(255,255,255,.78);margin-bottom:7px}
+.a-upd{font-style:normal;font-size:11px;font-weight:400;color:rgba(255,255,255,.75)}
+.a-num{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:32px;font-weight:650;line-height:1.1;letter-spacing:-.5px}
+.a-num small{font-size:13px;font-weight:400;margin-left:-4px}
+.cap-w{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.17);color:#fff;font-size:12px;font-weight:400;white-space:nowrap}
+.cap-ghost{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.18);color:rgba(255,255,255,.94);font-size:12px;white-space:nowrap}
+.du{color:var(--green-on-dark);font-style:normal}
+.dd{color:var(--red-on-dark);font-style:normal}
+.seg-dark{display:flex;background:rgba(255,255,255,.16);border-radius:999px;padding:3px;gap:2px;margin-top:16px}
+.seg-dark button{flex:1;height:30px;border:0;border-radius:999px;background:transparent;color:rgba(255,255,255,.88);font-size:13px;font-family:inherit;cursor:pointer}
+.seg-dark button.on{background:#fff;color:var(--blue-deep);font-weight:600;box-shadow:0 2px 6px rgba(10,60,140,.2)}
+.seg-dark.sm{margin-top:0;padding:2px}
+.seg-dark.sm button{flex:none;height:26px;padding:0 12px;font-size:12px}
+.a-sub{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;flex-wrap:wrap}
+.a-sub .date-control{margin-left:0}
+/* ===================== 方案A · 穿透页：迷你 sticky 头 + 面包屑胶囊 + 浅色筛选条 ===================== */
+.mh{height:44px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #e9eff8;display:flex;align-items:center;justify-content:flex-start;gap:2px;padding:0 10px 0 4px;position:sticky;top:0;z-index:20}
+.mh-back{position:static;display:grid;place-items:center;width:38px;height:38px;border:0;background:none;font-size:26px;line-height:1;color:#5a6577;cursor:pointer}
+.mh b{font-size:15px;font-weight:600;color:#2a3346;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mh .demo{position:static;margin-left:auto}
+.d-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px 2px}
+.crumbs{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:wrap}
+.crumb{display:inline-flex;align-items:center;height:28px;padding:0 13px;border-radius:999px;background:#eef2f8;color:#5d6b82;font-size:13px;white-space:nowrap;border:0;font-family:inherit;cursor:pointer}
+button.crumb:hover{background:#e4eaf3}
+span.crumb{cursor:default}
+.crumb.on{background:#e7f0ff;color:var(--blue);font-weight:600}
+.sep{color:#b4c0d2;font-size:13px}
+.f-bar{display:flex;align-items:center;gap:8px;padding:10px 16px;flex-wrap:wrap}
+.f-bar .seg-light{flex:1;min-width:208px}
+.seg-light{display:flex;background:#e9eef6;border-radius:999px;padding:3px;gap:2px}
+.seg-light button{flex:1;height:30px;min-width:0;border:0;border-radius:999px;background:transparent;color:#7c8aa0;font-size:13px;font-family:inherit;cursor:pointer}
+.seg-light button.on{background:#fff;color:var(--blue);font-weight:600;box-shadow:0 1px 4px rgba(24,62,102,.12)}
+.mini-seg{display:flex;background:#e9eef6;border-radius:999px;padding:2px;gap:2px;flex:none}
+.mini-seg button{height:26px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#7c8aa0;font-size:12px;font-family:inherit;cursor:pointer}
+.mini-seg button.on{background:#fff;color:var(--blue);font-weight:600;box-shadow:0 1px 4px rgba(24,62,102,.12)}
+/* ===================== 方案A · 指标摘要卡顶部：指标名胶囊 + 环/同比胶囊 ===================== */
+.d2-head{margin-bottom:10px}
+.name-cap{display:inline-flex;align-items:center;height:26px;padding:0 13px;border-radius:999px;background:#edf3ff;color:var(--blue);font-size:13px;font-weight:600;white-space:nowrap}
+.d2-caps{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 12px}
+.delta{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 10px;border-radius:999px;font-size:12px;white-space:nowrap}
+.delta.upbg{background:#e6f7f0;color:var(--green)}
+.delta.dnbg{background:#fdecee;color:var(--red)}
+@media(max-width:359px){.a-num{font-size:28px}.a-top{padding-right:64px}.seg-dark button{font-size:12px}.crumb{padding:0 10px;font-size:12px}.mini-seg button{padding:0 10px}.f-bar .seg-light{min-width:180px}}
