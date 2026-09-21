@@ -86,7 +86,7 @@ html.wx header{display:none}
 .opening-table th:first-child,.opening-table td:first-child{width:26%}
 .opening-table td:first-child .cell-sub{font-size:10px;white-space:nowrap}
 .store-list td,.store-list th{padding:10px 6px}
-.store-list .cell-sub{font-size:10px}
+.store-list .cell-sub{font-size:10px}.market-summary .detail-value{margin:6px 0 14px}.market-summary-bar{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:8px;border-top:1px solid #eef1f6;padding-top:12px}.market-summary-bar em{display:block;font-style:normal;font-size:11px;color:#69788e;margin-bottom:4px}.market-summary-bar b{font-size:15px;font-weight:600;color:#1f2b3d}.market-summary-bar b small{font-size:11px;font-weight:400;color:#69788e}
 .receipt-achievement .receipt-table-note{margin:10px 14px 18px}
 .market-table tbody tr.linked-row td:first-child{position:relative;padding-right:20px}
 .market-table .cell-arrow{position:absolute;right:8px;top:50%;transform:translateY(-50%);margin-left:0}
