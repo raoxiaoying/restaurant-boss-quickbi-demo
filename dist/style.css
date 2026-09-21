@@ -88,3 +88,5 @@ html.wx header{display:none}
 .store-list td,.store-list th{padding:10px 6px}
 .store-list .cell-sub{font-size:10px}
 .receipt-achievement .receipt-table-note{margin:10px 14px 18px}
+.market-table tbody tr.linked-row td:first-child{position:relative;padding-right:20px}
+.market-table .cell-arrow{position:absolute;right:8px;top:50%;transform:translateY(-50%);margin-left:0}
