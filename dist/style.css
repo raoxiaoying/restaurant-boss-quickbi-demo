@@ -87,3 +87,4 @@ html.wx header{display:none}
 .opening-table td:first-child .cell-sub{font-size:10px;white-space:nowrap}
 .store-list td,.store-list th{padding:10px 6px}
 .store-list .cell-sub{font-size:10px}
+.receipt-achievement .receipt-table-note{margin:10px 14px 18px}
