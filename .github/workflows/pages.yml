@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [main, plan-a]
   workflow_dispatch:
 
 permissions:
@@ -22,19 +22,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 注入缓存版本号
+        with:
+          ref: main
+          path: main-src
+      - name: 检出 plan-a 分支（方案A UI）
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          ref: plan-a
+          path: plan-a-src
+      - name: 组装双版本站点（根目录=原版 main，/plan-a/=方案A）
         run: |
-          VERSION="${GITHUB_SHA::7}"
-          sed -i "s/__VERSION__/${VERSION}/g" dist/index.html
-          echo "缓存版本号已注入: ${VERSION}"
-          grep -o 'app.js?v=[a-z0-9]*' dist/index.html || echo "警告：未找到版本号占位符"
+          mkdir -p site/plan-a
+          cp -r main-src/dist/. site/
+          if [ -d plan-a-src/dist ]; then
+            cp -r plan-a-src/dist/. site/plan-a/
+          else
+            echo "plan-a 分支暂不可用，仅部署原版"
+          fi
+          MAIN_SHA=$(cd main-src && git rev-parse --short HEAD)
+          sed -i "s/__VERSION__/${MAIN_SHA}m/g" site/index.html
+          if [ -f site/plan-a/index.html ]; then
+            PLAN_SHA=$(cd plan-a-src && git rev-parse --short HEAD)
+            sed -i "s/__VERSION__/${PLAN_SHA}a/g" site/plan-a/index.html
+          fi
+          echo "版本号注入完成:"
+          grep -o 'app.js?v=[a-z0-9]*' site/index.html site/plan-a/index.html || echo "警告：未找到版本号占位符"
       - uses: actions/configure-pages@v5
         with:
-          # 首次部署时自动开通 Pages（免去手动去 Settings 点选）
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: site
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
